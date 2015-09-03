@@ -8,7 +8,7 @@ RUN apk --update add wget \
     && tar -xvjf /tmp/riemann.tar.bz2 -C /opt \
     && rm /tmp/riemann.tar.bz2 \
     && sed -i'' -e 's/env bash/env sh/' /opt/riemann-${RIEMANN_VERSION}/bin/riemann \
-    && sed -i'' -e 's/127.0.0.1/0.0.0.0/' /opt/riemann-${RIEMANN_VERSION}/etc/riemann \
+    && sed -i'' -e 's/127.0.0.1/0.0.0.0/' /opt/riemann-${RIEMANN_VERSION}/etc/riemann.config \
     && apk del wget \
                ca-certificates \
                tar \
